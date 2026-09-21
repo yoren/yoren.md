@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node build.mjs",
     "test": "node --test",
-    "preview": "python3 -m http.server 4173 --bind 0.0.0.0 --directory dist"
+    "preview": "node preview.mjs"
   },
   "engines": {
     "node": ">=22"

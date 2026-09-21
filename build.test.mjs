@@ -4,6 +4,7 @@ import { cp, mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/pr
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
+import { createPreviewServer } from './preview.mjs';
 
 const project = import.meta.dirname;
 async function buildFixture(t, markdown) {
@@ -62,4 +63,35 @@ test('derives metadata and navigation from changed Markdown, preserving punctuat
   assert.ok(html.includes('<h3 id="use-care-1">Use <strong>care</strong>'));
   assert.ok(!html.includes('{{DOCUMENT}}'));
   assert.ok(!html.includes('Instructions for myself'));
+});
+
+test('preview bundles assets without changing production output and reads rebuilds', async (t) => {
+  const markdown = '# Preview.md\n\nFor reading. Not publishing.\n\n## Rule\n\nKeep it simple.\n';
+  const { directory, html } = await buildFixture(t, markdown);
+  const dist = join(directory, 'dist');
+  const server = createPreviewServer(dist);
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  t.after(() => new Promise(resolve => server.close(resolve)));
+  const url = `http://127.0.0.1:${server.address().port}`;
+  const response = await fetch(url, { headers: { 'Accept-Encoding': 'gzip' } });
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('content-encoding'), 'gzip');
+  assert.equal(response.headers.get('cache-control'), 'no-store');
+  const bundled = await response.text();
+  assert.ok(bundled.includes('data:font/woff2;base64,'));
+  assert.ok(bundled.includes('data:image/svg+xml;base64,'));
+  assert.ok(bundled.includes('<style>@font-face'));
+  assert.ok(!bundled.includes('rel="preload"'));
+  assert.ok(!bundled.includes('src="/navigation.js"'));
+  assert.ok(!bundled.includes('href="/style.css"'));
+  assert.ok(bundled.indexOf('<script>') > bundled.indexOf('</main>'));
+  assert.ok(bundled.includes(await readFile(join(dist, 'navigation.js'), 'utf8')));
+  assert.equal(await readFile(join(dist, 'index.html'), 'utf8'), html);
+  assert.equal(await (await fetch(`${url}/yoren.md`)).text(), markdown);
+  assert.equal((await fetch(`${url}/PRIVATE-NOTES.md`)).status, 404);
+  assert.equal((await fetch(`${url}/fonts/`)).status, 404);
+  await writeFile(join(dist, 'index.html'), html.replace('Keep it simple.', 'Read the latest build.'));
+  const updated = await fetch(`${url}/index.html`, { headers: { 'Accept-Encoding': 'identity' } });
+  assert.equal(updated.headers.get('content-encoding'), null);
+  assert.ok((await updated.text()).includes('Read the latest build.'));
 });

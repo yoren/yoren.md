@@ -4,7 +4,7 @@
 
 ## Local preview
 
-Use Node.js 22 or newer. The preview command also uses Python 3.
+Use Node.js 22 or newer.
 
 ```sh
 npm ci
@@ -14,6 +14,8 @@ npm run preview
 ```
 
 Re-run the build after changes. Presentation lives in `src/`; `dist/` is generated and never committed. No framework, application server, or external font service is required.
+
+The preview server bundles styles, navigation, the font, and favicon into a compressed HTML response to avoid extra round trips through a remote orb portal. It reads the latest build on each request and disables caching. This transformation is preview-only: it never modifies `dist/`, and production hosting still serves the separate built assets. `/yoren.md` remains available as raw Markdown.
 
 ## Static hosting
 
