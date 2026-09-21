@@ -33,6 +33,10 @@ test('publishes only the document and allowed assets, with all current rule anch
     'working-with-a-team', 'make-done-checkable', 'be-thorough-within-a-boundary',
     'ask-before-taking-a-detour', 'make-uncertainty-visible',
     'revisit-the-plan-when-the-work-changes', 'keep-people-in-the-loop',
+    'engineering-and-tooling', 'keep-responsibilities-and-dependencies-clear',
+    'make-important-rules-executable', 'test-behavior-where-it-can-be-proved',
+    'let-difficult-tests-question-the-design', 'verify-what-i-actually-ship',
+    'leave-useful-instructions-for-the-next-change', 'choose-tools-for-the-checks-they-enable',
     'maintaining-these-instructions',
   ]);
   const navs = [...html.matchAll(/<nav aria-label="Rules">([\s\S]*?)<\/nav>/g)];
