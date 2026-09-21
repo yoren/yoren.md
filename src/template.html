@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="theme-color" content="#fafafa">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/navigation.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#document">Skip to instructions</a>
+    <div class="layout">
+      <aside class="desktop-index">
+        <nav aria-label="Rules">{{CONTENTS}}</nav>
+      </aside>
+      <div class="reading-column">
+        <details class="mobile-index">
+          <summary>Jump to a rule<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></summary>
+          <nav aria-label="Rules">{{CONTENTS}}</nav>
+        </details>
+        <main id="document" tabindex="-1">{{DOCUMENT}}</main>
+        <footer>
+          <div class="document-links">
+            <a href="https://github.com/yoren/yoren.md">View on GitHub</a>
+            <a href="/yoren.md">Read Markdown</a>
+          </div>
+          <a href="#document">Back to top</a>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
