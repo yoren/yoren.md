@@ -2,18 +2,25 @@
 name: yoren.md
 description: A continuous personal instruction document with a compact rule index.
 colors:
-  paper: "#f4f7f3"
-  ink: "#20372d"
-  muted: "#53665a"
+  paper: "#fafafa"
+  ink: "#292e2b"
+  muted: "#606963"
   accent: "#276348"
-  line: "#d1dcd2"
+  line: "#dedfdd"
   selection: "#d8e8d8"
 typography:
   display:
     fontFamily: "Source Serif 4, Georgia, serif"
+    fontSize: "3rem"
     fontWeight: 500
     lineHeight: 1.22
     letterSpacing: "-0.035em"
+  intro-purpose:
+    fontSize: "1.5rem"
+    lineHeight: 1.5
+  intro-note:
+    fontSize: ".9375rem"
+    lineHeight: 1.6
   body:
     fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
     fontSize: "1.0625rem"
@@ -24,24 +31,28 @@ typography:
 
 ## Overview
 
-A quiet reading surface with editorial serif headings and practical navigation.
-The pine/mineral palette avoids the warm cream-and-orange direction the owner
-rejected. Typography and spacing carry the identity rather than decorative cards.
+A reading-first document with a subtle personal touch, not a themed publication.
+The neutral field and dark prose keep attention on the writing. Modest serif
+headings, a small green filename extension, and the opening sentence provide
+character without an oversized masthead, decorative marks, or a colored sidebar.
 
 ## Colors
 
-Paper provides the cool background; ink carries headings and major navigation.
-Muted green carries paragraphs and secondary links. Pine accent marks links,
-current location, and keyboard focus. Line is reserved for structural separators;
-selection supplies highlighted text and code-block backgrounds.
+Paper provides the neutral background; ink carries prose, headings, and major
+navigation. Muted green-gray carries secondary links and the introductory note.
+Pine accent marks the filename extension, links, current location, and keyboard
+focus. Line is reserved for structural separators; selection supplies highlighted
+text and code-block backgrounds.
 
 ## Typography
 
-Source Serif 4 is self-hosted for headings and the introductory sentence.
-System sans-serif supports longer paragraphs and the index. Desktop title size
-scales from 2.75rem to 3.5rem; second- and third-level headings use 1.9375rem and
-1.625rem. On narrow screens those headings use 1.75rem and 1.5rem, with 1rem body
-text. Balanced headings and generous line height preserve readability.
+Source Serif 4 is self-hosted for headings and the introductory purpose sentence.
+System sans-serif supports longer paragraphs, the index, and the supporting note.
+The desktop title uses 3rem, with its filename extension at 70% of that size.
+The purpose sentence uses 1.5rem and its supporting note .9375rem on separate lines.
+Second- and third-level headings use 1.9375rem and 1.625rem. On narrow screens those
+headings use 1.75rem and 1.5rem, with 1rem body text. Balanced headings and generous
+line height preserve readability.
 
 ## Layout
 
@@ -66,7 +77,7 @@ appear on heading hover or keyboard focus. Focus rings use the accent color.
 ## Do's and Don'ts
 
 - Do keep the whole document readable and every rule directly linkable.
-- Do preserve the cool field and clear serif/sans hierarchy.
+- Do preserve the neutral field, dark prose, and clear serif/sans hierarchy.
 - Do keep navigation usable without JavaScript; enhancements add selection and focus behavior.
-- Don't introduce marketing sections, numbered cards, or decorative motion into the reading flow.
+- Don't introduce marketing sections, numbered cards, oversized mastheads, textures, or decorative motion.
 - Don't duplicate document text in templates; README.md owns the content.

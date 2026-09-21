@@ -30,6 +30,11 @@ document = document.replace(/<h([2-6]) id="([^"]+)">([\s\S]*?)<\/h\1>/g, (_, lev
   `<h${level} id="${id}">${text}<a class="permalink" href="#${id}" aria-label="Link to this section"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="m10 13 4-4m-6 7-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 1 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a></h${level}>`
 );
 const description = plain(document.match(/<p>([\s\S]*?)<\/p>/)?.[1] ?? '').replaceAll('"', '&quot;');
+// Presentation only: keep the Markdown and metadata unchanged.
+document = document.replace(/(<h1\b[^>]*>[^<]+)(\.md)(<\/h1>)/, '$1<span class="file-extension">$2</span>$3');
+document = document.replace(/<p>[\s\S]*?<\/p>/, (paragraph) =>
+  paragraph.replace(/^<p>([^<]+?\.) ([^<]+)<\/p>$/, '<p class="introduction"><span class="intro-purpose">$1</span> <span class="intro-note">$2</span></p>')
+);
 const replacements = {
   TITLE: plain(title.text),
   DESCRIPTION: description,

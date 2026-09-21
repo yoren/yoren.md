@@ -40,15 +40,18 @@ test('publishes only the document and allowed assets, with all current rule anch
   for (const [, nav] of navs) {
     assert.deepEqual([...nav.matchAll(/href="#([^"]+)"/g)].map((match) => match[1]), ids);
   }
-  assert.ok(html.includes('<h1 id="yorenmd">yoren.md</h1>'));
+  assert.ok(html.includes('<h1 id="yorenmd">yoren<span class="file-extension">.md</span></h1>'));
+  assert.ok(html.includes('<span class="intro-purpose">Instructions for myself.</span> <span class="intro-note">Written from experience, revised with practice.</span>'));
   assert.ok(html.includes('These instructions should help me act, not become another standard to punish myself with.'));
 });
 
 test('derives metadata and navigation from changed Markdown, preserving punctuation and unique fragments', async (t) => {
-  const markdown = '# Other title\n\nA "quoted" description & more.\n\n## Fish & chips\n\n### Use **care**\n\nFirst.\n\n### Use **care**\n\nSecond.\n\n## Next\n\nLast.\n';
+  const markdown = '# Other title\n\nA "quoted" description & more.\n\n## Fish & chips\n\n### Use **care**\n\nFirst. Another sentence.\n\n### Use **care**\n\nSecond.\n\n## Next\n\nLast.\n';
   const { html } = await buildFixture(t, markdown);
   assert.ok(html.includes('<title>Other title</title>'));
   assert.ok(html.includes('content="A &quot;quoted&quot; description &amp; more."'));
+  assert.ok(html.includes('<p>First. Another sentence.</p>'));
+  assert.ok(!html.includes('class="intro-purpose"'));
   assert.ok(html.includes('<a href="#fish--chips">Fish &amp; chips</a><ul>'));
   assert.ok(html.includes('<a href="#use-care">Use care</a>'));
   assert.ok(html.includes('<a href="#use-care-1">Use care</a>'));
