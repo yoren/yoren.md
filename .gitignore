@@ -1,0 +1,7 @@
+# Local Amp state and working artifacts are not public site content.
+.amp/
+
+# Local environment values and macOS metadata.
+.env
+.env.*
+.DS_Store
