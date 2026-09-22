@@ -6,45 +6,37 @@ This isn’t a description of how I always behave. It’s a reminder of how I wa
 
 ## Working with a team
 
-### Make “done” checkable
+Openness is the foundation. Difficult situations can turn into good outcomes when the team and I stay willing to listen, explain, and change. Keep that possibility open, even when the conversation is uncomfortable.
 
-Before starting substantial work, make sure I understand what’s included, what isn’t, and how we’ll know it’s finished.
+### Give feedback time to settle
 
-Name the relevant designs, behaviors, and surfaces. “Site-wide” and “etc.” aren’t clear boundaries.
+Negative feedback can hurt even when it is delivered with care. Feeling defensive is natural; it doesn’t have to decide how I respond.
 
-When the scope is unclear, propose a concrete interpretation and confirm it with the people involved.
+When my first reaction is “not my problem,” acknowledge the feedback and give myself 24 hours to digest it before coming back. Let people know I need that time rather than going silent. My response after reflection may be different.
 
-### Be thorough within a boundary
+### Ask what better looks like
 
-Test the change and its likely consequences. Know where my verification ends and someone else’s acceptance testing begins.
+Whether starting work or responding to feedback, ask for concrete expectations: what to do, what is outside the scope, and how we’ll know the outcome is right. I can’t reliably improve a behavior without understanding what is expected instead.
 
-If I see a reason for broader testing, explain the risk and agree on the additional work. Don’t silently turn a focused task into an exhaustive investigation.
+Explain my understanding in my own words and confirm it. Ask for examples where I’m unsure; “site-wide” and “etc.” aren’t clear boundaries. Don’t mistake agreement for knowing how to act.
 
-### Ask before taking a detour
+### Act on guidance honestly
 
-An adjacent problem isn’t automatically part of my task.
+Once expectations are clear, follow the agreed instructions and put them into practice.
 
-Before spending time on it, check whether it affects the agreed outcome. If it doesn’t, record it separately and return to the work at hand.
-
-### Make uncertainty visible
-
-Timebox investigation. If I’m still stuck when that time is up, share what I’ve tried, what I’ve learned, and what I think should happen next.
-
-Ask for a specific decision, pointer, or second opinion. Don’t wait until I’ve exhausted every possibility before involving someone else.
+If I have concerns, explain them and ask to resolve them. Don’t quietly ignore guidance or promise something I don’t believe I can follow. Openness means being willing to change, not pretending to agree.
 
 ### Revisit the plan when the work changes
 
-When new information changes the scope or makes an estimate unrealistic, say so while there are still options.
+Test the change and its likely consequences, and agree where my verification ends and someone else’s acceptance testing begins. Fix problems caused by my work; an adjacent problem isn’t automatically part of the task.
 
-Explain what changed and propose a way forward. Don’t quietly absorb additional work into the original commitment.
-
-Fix problems caused by my change. Discuss newly discovered work rather than assuming it all belongs in the same task.
+If broader testing, new information, or an unrealistic estimate calls for a different plan, explain why and agree on the change while there are still options. Record unrelated issues separately. Don’t quietly expand the original commitment.
 
 ### Keep people in the loop
 
-Share what I’m planning, what I’ve finished, and where I need input. Make progress and uncertainty visible before someone has to ask.
+Share what I’m planning, what I’ve finished, and where I need input. Keep a daily update rhythm when working closely with others, but raise questions as they arise rather than saving them for the update.
 
-When working closely with a client or another engineer, keep a daily update rhythm. Raise questions when they arise rather than saving them for the update.
+Timebox investigation. If I’m still stuck, share what I’ve tried and learned, propose a next step, and ask for a specific decision, pointer, or second opinion. Make uncertainty visible before someone has to ask—not after I’ve exhausted every possibility.
 
 ## Engineering and tooling
 
