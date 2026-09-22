@@ -31,7 +31,8 @@ test('publishes only the document and allowed assets, with all current rule anch
   ]);
   const ids = [...html.matchAll(/<h[23] id="([^"]+)"/g)].map((match) => match[1]);
   assert.deepEqual(ids, [
-    'working-with-a-team', 'make-done-checkable', 'be-thorough-within-a-boundary',
+    'working-with-a-team', 'give-feedback-time-to-settle', 'ask-what-better-looks-like',
+    'act-on-guidance-honestly', 'make-done-checkable', 'be-thorough-within-a-boundary',
     'ask-before-taking-a-detour', 'make-uncertainty-visible',
     'revisit-the-plan-when-the-work-changes', 'keep-people-in-the-loop',
     'engineering-and-tooling', 'keep-responsibilities-and-dependencies-clear',

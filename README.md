@@ -6,6 +6,26 @@ This isn’t a description of how I always behave. It’s a reminder of how I wa
 
 ## Working with a team
 
+Openness is the foundation. Difficult situations can turn into good outcomes when the team and I stay willing to listen, explain, and change. Keep that possibility open, even when the conversation is uncomfortable.
+
+### Give feedback time to settle
+
+Negative feedback can hurt even when it is delivered with care. Feeling defensive is natural; it doesn’t have to decide how I respond.
+
+When my first reaction is “not my problem,” slow down. Acknowledge the feedback, give myself 24 hours to digest it, and come back to it. Let people know I need that time rather than going silent. My response after reflection may be different from my first reaction.
+
+### Ask what better looks like
+
+I can’t reliably change a behavior if I don’t understand what is expected instead. Ask for clear instructions and concrete examples of what to do differently.
+
+Explain my understanding in my own words and ask questions where I’m unsure. Don’t mistake agreeing with feedback for knowing how to act on it.
+
+### Act on guidance honestly
+
+Once expectations are clear, follow the agreed instructions and put them into practice.
+
+If I have concerns about a changed way of working, say so openly and explain why. Ask to resolve the concern rather than quietly ignoring the guidance or promising something I don’t believe I can follow. Openness means being willing to change, not pretending to agree.
+
 ### Make “done” checkable
 
 Before starting substantial work, make sure I understand what’s included, what isn’t, and how we’ll know it’s finished.
