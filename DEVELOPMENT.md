@@ -17,6 +17,8 @@ Re-run the build after changes. Presentation lives in `src/`; `dist/` is generat
 
 The preview server bundles styles, navigation, the font, and favicon into a compressed HTML response to avoid extra round trips through a remote orb portal. It reads the latest build on each request and disables caching. This transformation is preview-only: it never modifies `dist/`, and production hosting still serves the separate built assets. `/yoren.md` remains available as raw Markdown.
 
+The preview sends `X-Amp-Review-Widget: off` to avoid optional portal-injected review requests. This disables the floating page-comment button in Amp portals; give feedback in the thread instead. Remove this header to restore the widget. Production hosting is unaffected.
+
 ## Static hosting
 
 Connect the GitHub repository to a static site host such as Sevalla:
