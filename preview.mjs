@@ -35,6 +35,8 @@ export function createPreviewServer(directory = 'dist') {
       response.writeHead(200, {
         'Content-Type': path === '/yoren.md' ? 'text/markdown; charset=utf-8' : 'text/html; charset=utf-8',
         'Cache-Control': 'no-store',
+        // Keep optional portal review scripts out of latency-sensitive previews.
+        'X-Amp-Review-Widget': 'off',
         'Vary': 'Accept-Encoding',
         ...(compressed ? { 'Content-Encoding': 'gzip' } : {}),
         'Content-Length': body.length,

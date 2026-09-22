@@ -77,6 +77,7 @@ test('preview bundles assets without changing production output and reads rebuil
   assert.equal(response.status, 200);
   assert.equal(response.headers.get('content-encoding'), 'gzip');
   assert.equal(response.headers.get('cache-control'), 'no-store');
+  assert.equal(response.headers.get('x-amp-review-widget'), 'off');
   const bundled = await response.text();
   assert.ok(bundled.includes('data:font/woff2;base64,'));
   assert.ok(bundled.includes('data:image/svg+xml;base64,'));
